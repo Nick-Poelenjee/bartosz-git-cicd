@@ -35,3 +35,9 @@ def test_overdraw_checking():
     account.deposit(50)
     account.withdraw(100)
     assert account.balance == -50
+
+def test_checking_high():
+    account = Account('checking')
+    account.deposit(100000)
+    account.withdraw(100000)
+    assert account.balance == 0
